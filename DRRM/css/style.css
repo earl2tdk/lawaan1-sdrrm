@@ -362,3 +362,8 @@ body {
 .hub-card {
     background-color: #ffffff; /* Keeps your cards crisp and white against the tinted background */
 }
+/* Safe Mobile Adjustments */
+@media screen and (max-width: 768px) {
+  img, iframe { max-width: 100% !important; height: auto !important; }
+  .hub-grid, .grid, [class*="grid"], [class*="row"] { display: flex !important; flex-direction: column !important; }
+}
