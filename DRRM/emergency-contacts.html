@@ -1,71 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Contacts - LNHS SDRRM</title>
+    <title>Emergency Contacts | Lawaan NHS DRRM</title>
+    
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Header Navigation -->
-    <header>
+    <div class="emergency-bar">
+        <div class="container emergency-container">
+            <div class="alert-status">
+                <span class="status-indicator active-hayo"></span>
+                <strong>4H PROTOCOL STATUS:</strong> <span class="badge badge-hayo">HAYO (NORMAL CLASSES)</span>
+            </div>
+            <div class="emergency-quick-call">
+                <span>Emergency Hotline:</span>
+                <a href="tel:09123456789" class="phone-link">📞 (0917) 811 4078</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo">LNHS SDRRM</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="activities.html">Activities</a></li>
-                <li><a href="emergency-contacts.html">Emergency Contacts</a></li>
-                <li><a href="hazard-map.html">Hazard Map</a></li>
-            </ul>
+            <a href="index.html" class="logo-area">
+                <img src="images/logo.png" alt="Lawaan National High School Logo" class="logo-img">
+                <div>
+                    <h2>Lawaan National High School</h2>
+                    <span>Disaster Risk Reduction & Management Hub</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="preparedness.html">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+                <a href="activities.html">Activities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="emergency-contacts.html" class="active">Emergency Contacts</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="container main-content">
-        <div class="page-title">
-            <h1>Official Emergency Numbers</h1>
-            <p>Click any button to call directly from your mobile phone or tablet device.</p>
-        </div>
-
-        <div class="hub-grid">
-            <!-- Card 1 -->
-            <div class="hub-card">
-                <div class="hub-icon">🏫</div>
-                <h3>LNHS SDRRM Office</h3>
-                <p>School Safety & Crisis Response Team</p>
-                <a href="tel:09122027992" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call (09122027992)</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="hub-card">
-                <div class="hub-icon">🚑</div>
-                <h3>Talisay City DRRM Office</h3>
-                <p>LGU Rescue & Emergency Operations</p>
-                <a href="tel:09178114078" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call Talisay City DRRM</a>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="hub-card">
-                <div class="hub-icon">🚒</div>
-                <h3>Bureau of Fire Protection</h3>
-                <p>Fire Station & Rescue Hotline</p>
-                <a href="tel:911" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call BFP Station</a>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="hub-card">
-                <div class="hub-icon">👮</div>
-                <h3>Philippine National Police</h3>
-                <p>Local Police Station Hotline</p>
-                <a href="tel:911" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call PNP Station</a>
+    <section class="page-hero">
+        <div class="page-hero-overlay">
+            <div class="container page-hero-content">
+                <span class="hero-label">IMMEDIATE ASSISTANCE</span>
+                <h1>Emergency <span>Contact Directory</span></h1>
+                <p>One-click call buttons for local emergency responders, municipal DRRM offices, and school safety leads.</p>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <section class="resource-hub">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="section-tag">HOTLINES & RESPONDERS</span>
+                <h2>Official Emergency Numbers</h2>
+                <p>Click any button to call directly from your mobile phone or tablet device.</p>
+            </div>
+
+            <div class="hub-grid">
+                <div class="hub-card">
+                    <div class="hub-icon">🏫</div>
+                    <h3>LNHS SDRRM Office</h3>
+                    <p>School Safety & Crisis Response Team</p>
+                    <a href="tel:09122027992" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call (09122027992) </a>
+                </div>
+
+                <div class="hub-card">
+                    <div class="hub-icon">🚑</div>
+                    <h3>Talisay City DRRM Office</h3>
+                    <p>LGU Rescue & Emergency Operations</p>
+                    <a href="tel:09178114078" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call Talisay City DRRMO</a>
+                </div>
+
+                <div class="hub-card">
+                    <div class="hub-icon">🚒</div>
+                    <h3>Bureau of Fire Protection</h3>
+                    <p>Fire Station & Rescue Hotline</p>
+                    <a href="tel:911" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call BFP Station</a>
+                </div>
+
+                <div class="hub-card">
+                    <div class="hub-icon">👮</div>
+                    <h3>Philippine National Police</h3>
+                    <p>Local Police Station Hotline</p>
+                    <a href="tel:911" style="display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 700;">📞 Call PNP Station</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Lawaan NHS Logo" class="footer-logo">
+                <div>
+                    <h3>Lawaan National High School</h3>
+                    <p>Disaster Risk Reduction & Management Office</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="preparedness.html">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="activities.html">Activities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="emergency-contacts.html">Emergency Contacts</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Lawaan National High School. All Rights Reserved.</p>
+                <p>Preparedness • Protection • Resilience</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
 </body>
 </html>
