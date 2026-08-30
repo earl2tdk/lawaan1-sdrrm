@@ -356,61 +356,63 @@ img, iframe {
 .footer-bottom { border-top: 1px solid #334155; padding: 20px 0; text-align: center; font-size: 0.8rem; color: #94a3b8; }
 
 /* =====================================================
-   8. MOBILE RESPONSIVE OVERRIDES (Screens 768px and under)
+   CLEAN MOBILE RESPONSIVE FIX
 ====================================================== */
 @media screen and (max-width: 768px) {
-    /* Navigation Bar on Mobile */
-    .nav-container {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
+  
+  /* 1. Prevent wide elements from breaking screen bounds */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
 
-    .nav-menu {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
+  /* 2. Force top bar, navbar, and hero banner to span full mobile width */
+  .emergency-bar, 
+  .navbar, 
+  .page-hero, 
+  .four-h-section, 
+  .footer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
-    /* Hero Section Mobile Sizing */
-    .page-hero {
-        padding: 50px 15px;
-    }
+  /* 3. Fix navigation bar so menu items stack neatly below the logo */
+  .nav-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
 
-    .page-hero h1 {
-        font-size: 1.8rem;
-    }
+  .nav-menu {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px 15px !important;
+  }
 
-    /* Org Chart Fix for Mobile Screens */
-    .org-tree {
-        min-width: 100% !important;
-    }
+  /* 4. Fix organizational chart forced wide width */
+  .org-tree {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
 
-    .org-row-two, .org-row-seven {
-        flex-direction: column !important;
-        align-items: center;
-        gap: 15px;
-    }
+  .org-row-two, .org-row-seven {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 
-    .org-node {
-        width: 100% !important;
-        max-width: 300px;
-    }
+  .org-node {
+    width: 100% !important;
+    max-width: 280px !important;
+  }
 
-    /* Stack Grid Containers Vertically */
-    .hub-grid, 
-    .four-h-grid, 
-    .footer-grid, 
-    .grid, 
-    [class*="grid"], 
-    [class*="row"] {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px !important;
-    }
-
-    /* Footer Mobile Alignment */
-    .footer-grid {
-        text-align: center;
-    }
+  /* 5. Stack grid cards neatly in a single column */
+  .hub-grid, 
+  .four-h-grid, 
+  .footer-grid, 
+  [class*="grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
 }
