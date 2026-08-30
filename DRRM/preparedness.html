@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Preparedness | Lawaan National High School DRRM</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .infographic-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .infographic-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .infographic-img:hover {
+            transform: scale(1.01);
+        }
+
+        .infographic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .infographic-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .infographic-card h3 {
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP EMERGENCY STATUS BAR -->
+    <div class="emergency-bar">
+        <div class="container emergency-container">
+            <div class="alert-status">
+                <span class="status-indicator active-hayo"></span>
+                <strong>4H PROTOCOL STATUS:</strong> <span class="badge badge-hayo">HAYO (NORMAL CLASSES)</span>
+            </div>
+            <div class="emergency-quick-call">
+                <span>Emergency Hotline:</span>
+                <a href="tel:09123456789" class="phone-link">📞 (0917) 811 4078</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-area">
+                <img src="images/logo.png" alt="Lawaan National High School Logo" class="logo-img">
+                <div>
+                    <h2>Lawaan National High School</h2>
+                    <span>Disaster Risk Reduction & Management Hub</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="preparedness.html" class="active">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+                <a href="activities.html">Activities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="emergency-contacts.html">Emergency Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="page-hero">
+        <div class="page-hero-overlay">
+            <div class="container page-hero-content">
+                <span class="hero-label">VISUAL SAFETY GUIDES</span>
+                <h1>Disaster <span>Preparedness Guides</span></h1>
+                <p>Official DepEd visual guide charts and infographics for active attacks, earthquakes, typhoons, and fire safety.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN ACTIVE ATTACK INFOGRAPHIC -->
+    <section class="resource-hub">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="section-tag">DEPED OFFICIAL CONTINGENCY PLAN</span>
+                <h2>Active Attack Quick Reference Guide</h2>
+                <p>Click on the image below to open or download the high-resolution poster.</p>
+            </div>
+
+            <div class="infographic-container">
+                <a href="images/active-attack-guide.jpg" target="_blank">
+                    <img src="images/active-attack-guide.jpg" alt="DepEd School Contingency Plan for Active Attacks" class="infographic-img">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITIONAL HAZARD INFOGRAPHICS -->
+    <section class="resource-hub" style="background-color: var(--bg-surface);">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="section-tag">NATURAL DISASTER GUIDES</span>
+                <h2>Other Hazard Infographics</h2>
+                <p>Visual safety reference guides for common campus emergencies.</p>
+            </div>
+
+            <div class="infographic-grid">
+                <!-- Earthquake Visual Card -->
+                <div class="infographic-card">
+                    <h3>🌐 Earthquake Safety Guide</h3>
+                    <a href="images/earthquake-guide.jpg" target="_blank">
+                        <img src="images/earthquake-guide.jpg" alt="Earthquake Safety Infographic" class="infographic-img">
+                    </a>
+                </div>
+
+                <!-- Typhoon Visual Card -->
+                <div class="infographic-card">
+                    <h3>🌀 Typhoon & Flood Guide</h3>
+                    <a href="images/typhoon-guide.jpg" target="_blank">
+                        <img src="images/typhoon-guide.jpg" alt="Typhoon Preparedness Infographic" class="infographic-img">
+                    </a>
+                </div>
+
+                <!-- Fire Safety Visual Card -->
+                <div class="infographic-card">
+                    <h3>🔥 Fire Safety Guide</h3>
+                    <a href="images/fire-guide.jpg" target="_blank">
+                        <img src="images/fire-guide.jpg" alt="Fire Evacuation Infographic" class="infographic-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Lawaan NHS Logo" class="footer-logo">
+                <div>
+                    <h3>Lawaan National High School</h3>
+                    <p>Disaster Risk Reduction & Management Office</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="preparedness.html">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="activities.html">Activities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="emergency-contacts.html">Emergency Contacts</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Lawaan National High School. All Rights Reserved.</p>
+                <p>Preparedness • Protection • Resilience</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

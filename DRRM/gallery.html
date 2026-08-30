@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Lawaan National High School DRRM</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary, #0284c7);
+            color: #ffffff;
+            border-color: var(--primary, #0284c7);
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
+        }
+
+        .gallery-item.hide {
+            display: none;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #f1f5f9;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            padding: 16px 20px;
+        }
+
+        .gallery-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary, #0284c7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .gallery-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark, #0f172a);
+            margin: 0;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP EMERGENCY STATUS BAR -->
+    <div class="emergency-bar">
+        <div class="container emergency-container">
+            <div class="alert-status">
+                <span class="status-indicator active-hayo"></span>
+                <strong>4H PROTOCOL STATUS:</strong> <span class="badge badge-hayo">HAYO (NORMAL CLASSES)</span>
+            </div>
+            <div class="emergency-quick-call">
+                <span>Emergency Hotline:</span>
+                <a href="tel:09123456789" class="phone-link">📞 (0917) 811 4078</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-area">
+                <img src="images/logo.png" alt="Lawaan National High School Logo" class="logo-img">
+                <div>
+                    <h2>Lawaan National High School</h2>
+                    <span>Disaster Risk Reduction & Management Hub</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="preparedness.html">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+                <a href="activities.html">Activities</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="emergency-contacts.html">Emergency Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="page-hero">
+        <div class="page-hero-overlay">
+            <div class="container page-hero-content">
+                <span class="hero-label">PHOTO ARCHIVES</span>
+                <h1>SDRRM <span>Visual Showcase</span></h1>
+                <p>Filter through photos documenting our campus preparedness drills, environmental action, and safety programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN GALLERY SECTION -->
+    <section class="resource-hub">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="section-tag">CAMPUS INITIATIVES</span>
+                <h2>Photo Gallery</h2>
+                <p>Select a category below to filter our school safety photos.</p>
+            </div>
+
+            <!-- CATEGORY FILTER BUTTONS -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="drills">Campus Drills</button>
+                <button class="filter-btn" data-filter="environmental">Environmental</button>
+                <button class="filter-btn" data-filter="training">Training & Relief</button>
+            </div>
+
+            <!-- GALLERY GRID -->
+            <div class="gallery-grid">
+
+                <!-- PHOTO 1 (DRILLS) -->
+                <div class="gallery-item" data-category="drills">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/earthquake-drill.jpg" alt="Nationwide Simultaneous Earthquake Drill" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Campus Drills</span>
+                        <h3 class="gallery-title">Nationwide Simultaneous Earthquake Drill</h3>
+                    </div>
+                </div>
+
+                <!-- PHOTO 2 (DRILLS) -->
+                <div class="gallery-item" data-category="drills">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/hazard-mapping-activity.jpg" alt="Campus Hazard Mapping" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Campus Drills</span>
+                        <h3 class="gallery-title">Student & Staff Hazard Mapping Walkthrough</h3>
+                    </div>
+                </div>
+
+                <!-- PHOTO 3 (TRAINING) -->
+                <div class="gallery-item" data-category="training">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/bls-training.jpg" alt="Basic Life Support Training" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Training & Relief</span>
+                        <h3 class="gallery-title">Basic Life Support & First Aid Training</h3>
+                    </div>
+                </div>
+
+                <!-- PHOTO 4 (ENVIRONMENTAL) -->
+                <div class="gallery-item" data-category="environmental">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/tree-planting.jpg" alt="Tree Planting Drive" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Environmental</span>
+                        <h3 class="gallery-title">Campus & Hillside Tree Planting Drive</h3>
+                    </div>
+                </div>
+
+                <!-- PHOTO 5 (ENVIRONMENTAL) -->
+                <div class="gallery-item" data-category="environmental">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/coastal-cleanup.jpg" alt="Coastal Clean Up" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Environmental</span>
+                        <h3 class="gallery-title">Coastal Clean-Up & Waste Management</h3>
+                    </div>
+                </div>
+
+                <!-- PHOTO 6 (TRAINING) -->
+                <div class="gallery-item" data-category="training">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/typhoon-relief.jpg" alt="Typhoon Relief Distribution" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Training & Relief</span>
+                        <h3 class="gallery-title">Typhoon Relief & Donation Drive</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Lawaan NHS Logo" class="footer-logo">
+                <div>
+                    <h3>Lawaan National High School</h3>
+                    <p>Disaster Risk Reduction & Management Office</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="preparedness.html">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="activities.html">Activities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="emergency-contacts.html">Emergency Contacts</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Lawaan National High School. All Rights Reserved.</p>
+                <p>Preparedness • Protection • Resilience</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CATEGORY FILTER SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active state from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active state to clicked button
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.classList.remove('hide');
+                        } else {
+                            item.classList.add('hide');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

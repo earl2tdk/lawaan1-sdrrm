@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDRRM Activities & Drills | Lawaan National High School</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .activity-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .activity-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #f1f5f9;
+        }
+
+        .activity-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .activity-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .activity-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .activity-date {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .activity-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .activity-caption {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .activity-footer {
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+            font-size: 0.8rem;
+            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP EMERGENCY STATUS BAR -->
+    <div class="emergency-bar">
+        <div class="container emergency-container">
+            <div class="alert-status">
+                <span class="status-indicator active-hayo"></span>
+                <strong>4H PROTOCOL STATUS:</strong> <span class="badge badge-hayo">HAYO (NORMAL CLASSES)</span>
+            </div>
+            <div class="emergency-quick-call">
+                <span>Emergency Hotline:</span>
+                <a href="tel:09123456789" class="phone-link">📞 (0917) 811 4078</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-area">
+                <img src="images/logo.png" alt="Lawaan National High School Logo" class="logo-img">
+                <div>
+                    <h2>Lawaan National High School</h2>
+                    <span>Disaster Risk Reduction & Management Hub</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="preparedness.html">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+                <a href="activities.html" class="active">Activities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="emergency-contacts.html">Emergency Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="page-hero">
+        <div class="page-hero-overlay">
+            <div class="container page-hero-content">
+                <span class="hero-label">CAMPUS INITIATIVES & DRILLS</span>
+                <h1>SDRRM <span>Activities & Events</span></h1>
+                <p>Highlighting our continuous disaster response training, campus hazard assessments, community relief efforts, and environmental safety programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN ACTIVITIES SECTION -->
+    <section class="resource-hub">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="section-tag">DISASTER READINESS IN ACTION</span>
+                <h2>Recent Drills, Workshops & Relief Projects</h2>
+                <p>Check out our latest campus disaster preparedness events and community engagement activities.</p>
+            </div>
+
+            <div class="activities-grid">
+
+                <!-- 1. EARTHQUAKE DRILL -->
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="images/earthquake-drill.jpg" alt="Earthquake Drill" class="activity-img">
+                        <span class="activity-badge">Quarterly Drill</span>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">1st Quarter 2026</span>
+                        <h3 class="activity-title">Nationwide Simultaneous Earthquake Drill</h3>
+                        <p class="activity-caption">Students and school staff actively executed the "Duck, Cover, and Hold" maneuver followed by an orderly evacuation to the main open field assembly zone.</p>
+                        <div class="activity-footer">
+                            <span>📍 School Open Field</span>
+                            <span>👥 LNHS Students & Faculty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. CAMPUS HAZARD MAPPING -->
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="images/hazard-mapping-activity.jpg" alt="Campus Hazard Mapping & Assessment" class="activity-img">
+                        <span class="activity-badge">Risk Assessment</span>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">June 2026</span>
+                        <h3 class="activity-title">Student & Staff Campus Hazard Mapping</h3>
+                        <p class="activity-caption">Student leaders and SDRRM officers conducted a walkthrough inspection to identify structural vulnerabilities, blocked walkways, and safe evacuation paths.</p>
+                        <div class="activity-footer">
+                            <span>📍 LNHS Campus Grounds</span>
+                            <span>📋 SDRRM Inspection Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. BASIC LIFE SUPPORT TRAINING -->
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="images/bls-training.jpg" alt="Basic Life Support Training" class="activity-img">
+                        <span class="activity-badge">Capacity Building</span>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">August 2025</span>
+                        <h3 class="activity-title">Basic Life Support & First Aid Training</h3>
+                        <p class="activity-caption">Hands-on seminar equipping student leaders, SDRRM medic officers, and teachers with essential CPR skills, wound care, and emergency triage techniques.</p>
+                        <div class="activity-footer">
+                            <span>📍 Audio-Visual Room</span>
+                            <span>🏥 SDRRM Medic Unit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. TREE PLANTING -->
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="images/tree-planting.jpg" alt="Tree Planting Activity" class="activity-img">
+                        <span class="activity-badge">Environmental Safety</span>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">February 2026</span>
+                        <h3 class="activity-title">Campus & Community Tree Planting Drive</h3>
+                        <p class="activity-caption">Greening initiative aimed at preventing soil erosion, enhancing natural flood mitigation, and promoting environmental stewardship among youth.</p>
+                        <div class="activity-footer">
+                            <span>📍 School Perimeter & Hillsides</span>
+                            <span>🌱 Eco-Club & SDRRM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. COASTAL CLEAN UP -->
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="images/coastal-cleanup.jpg" alt="Coastal Clean Up" class="activity-img">
+                        <span class="activity-badge">Community Action</span>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">November 2025</span>
+                        <h3 class="activity-title">Coastal Clean-Up & Waste Management</h3>
+                        <p class="activity-caption">Student volunteers and community members removed ocean debris and plastics to clear coastal drainage waterways and protect marine ecosystems.</p>
+                        <div class="activity-footer">
+                            <span>📍 Nearby Shoreline</span>
+                            <span>🌊 LNHS Youth Volunteers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. TYPHOON RELIEF DISTRIBUTION -->
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="images/typhoon-relief.jpg" alt="Typhoon Relief Distribution" class="activity-img">
+                        <span class="activity-badge">Humanitarian Relief</span>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">November 2025</span>
+                        <h3 class="activity-title">Typhoon Relief & Donation Drive</h3>
+                        <p class="activity-caption">Mobilization and distribution of relief packages, food packs, hygiene kits, and emergency aid for families affected by recent severe typhoons.</p>
+                        <div class="activity-footer">
+                            <span>📍 School Covered Court</span>
+                            <span>📦 LGU & SDRRM Team</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Lawaan NHS Logo" class="footer-logo">
+                <div>
+                    <h3>Lawaan National High School</h3>
+                    <p>Disaster Risk Reduction & Management Office</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="preparedness.html">Preparedness</a>
+                <a href="hazard-map.html">Hazard Map</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="activities.html">Activities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="emergency-contacts.html">Emergency Contacts</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Lawaan National High School. All Rights Reserved.</p>
+                <p>Preparedness • Protection • Resilience</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
