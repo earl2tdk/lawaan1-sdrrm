@@ -81,10 +81,13 @@
                     </div>
                 </div>
 
-                <form name="homepage-hazard-report" method="POST" data-netlify="true" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+                <form name="homepage-hazard-report" method="POST" action="/index.html?success=true" data-netlify="true" netlify-honeypot="bot-field" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
                     
-                    <!-- Required hidden field for Netlify Form processing -->
+                    <!-- Required hidden inputs for Netlify Form processing -->
                     <input type="hidden" name="form-name" value="homepage-hazard-report" />
+                    <p style="display:none;">
+                        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
 
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <div style="flex: 1; min-width: 200px;">
