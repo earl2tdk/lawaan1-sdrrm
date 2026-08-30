@@ -1,19 +1,10 @@
-console.log("Lawaan NHS SDRRM Portal Loaded");
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach((card) => {
-
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-10px)";
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
         });
-
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "translateY(0)";
-        });
-
-    });
-
+    }
 });
