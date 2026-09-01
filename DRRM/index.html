@@ -65,9 +65,6 @@
         </div>
     </section>
 
-    <!-- =====================================================
-         INCIDENT & HAZARD REPORT SECTION (Netlify Integrated)
-    ====================================================== -->
     <section id="report-section" style="padding: 50px 0; background-color: var(--bg-surface);">
         <div class="container" style="max-width: 750px;">
             <div class="hub-card" style="width: 100%; border-top: 5px solid var(--accent); padding: 30px;">
@@ -83,7 +80,6 @@
 
                 <form name="homepage-hazard-report" method="POST" action="/index.html?success=true" data-netlify="true" netlify-honeypot="bot-field" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
                     
-                    <!-- Required hidden inputs for Netlify Form processing -->
                     <input type="hidden" name="form-name" value="homepage-hazard-report" />
                     <p style="display:none;">
                         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -92,7 +88,7 @@
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <div style="flex: 1; min-width: 200px;">
                             <label style="display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 5px; color: var(--text-main);">Reporter Type:</label>
-                            <select name="reporter-type" required style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background-color: #fff;">
+                            <select name="reporter-type" id="reporterType" required onchange="toggleReporterInfo(this.value)" style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background-color: #fff;">
                                 <option value="Student">Student</option>
                                 <option value="Teacher/Staff">Teacher / Staff</option>
                                 <option value="Parent/Visitor">Parent / Visitor</option>
@@ -113,6 +109,18 @@
                                 <option value="Medical Emergency">Medical Emergency / Injury</option>
                                 <option value="Other Safety Issue">Other Safety Issue</option>
                             </select>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <label style="display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 5px; color: var(--text-main);">Full Name:</label>
+                            <input type="text" name="reporter-name" id="reporterName" placeholder="e.g., Juan Dela Cruz" style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 0.9rem;">
+                        </div>
+
+                        <div style="flex: 1; min-width: 200px;">
+                            <label style="display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 5px; color: var(--text-main);">Contact Number:</label>
+                            <input type="tel" name="reporter-contact" id="reporterContact" placeholder="e.g., 09171234567" style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 0.9rem;">
                         </div>
                     </div>
 
@@ -242,5 +250,26 @@
     </footer>
 
     <script src="js/main.js" defer></script>
+    
+    <script>
+        function toggleReporterInfo(type) {
+            const nameInput = document.getElementById('reporterName');
+            const contactInput = document.getElementById('reporterContact');
+            
+            if (type === 'Anonymous') {
+                nameInput.value = '';
+                contactInput.value = '';
+                nameInput.disabled = true;
+                contactInput.disabled = true;
+                nameInput.placeholder = "Not required for anonymous reports";
+                contactInput.placeholder = "Not required for anonymous reports";
+            } else {
+                nameInput.disabled = false;
+                contactInput.disabled = false;
+                nameInput.placeholder = "e.g., Juan Dela Cruz";
+                contactInput.placeholder = "e.g., 09171234567";
+            }
+        }
+    </script>
 </body>
 </html>
